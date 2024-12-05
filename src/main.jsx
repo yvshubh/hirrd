@@ -16,7 +16,9 @@ if (!PUBLISHABLE_KEY) {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <ClerkProvider appearance={{baseTheme: shadesOfPurple}} publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+    <ClerkProvider appearance={{baseTheme: shadesOfPurple}} 
+    navigate={(to) => window.history.pushState({}, '', to)}
+    publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
     <App />
     </ClerkProvider>
   </StrictMode>,
